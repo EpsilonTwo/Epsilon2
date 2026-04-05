@@ -1,0 +1,42 @@
+---
+// Footer.astro
+---
+<footer>
+  <div class="wrap--wide foot-in">
+    <div class="foot-logo">
+      <svg width="24" height="24" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+        <rect width="120" height="120" rx="16" fill="#07110e"/>
+        <path d="M20 18L10 32v56l10 14" stroke="#00e5cc" stroke-width="6" stroke-linecap="round"/>
+        <path d="M100 18l10 14v56l-10 14" stroke="#00e5cc" stroke-width="6" stroke-linecap="round"/>
+        <text x="26" y="76" font-family="Space Mono,monospace" font-size="44" font-weight="700" fill="#00e5cc">ε</text>
+        <text x="72" y="55" font-family="Space Mono,monospace" font-size="24" font-weight="700" fill="#00ff41">2</text>
+      </svg>
+      <span>Epsilon²</span>
+    </div>
+    <p class="foot-copy" data-t="footer.copy">© 2026 Epsilon² — Stephan &amp; Yara. All rights reserved.</p>
+    <a href="#home" class="to-top" aria-label="Back to top">↑</a>
+  </div>
+</footer>
+
+<style>
+footer {
+  border-top: 1px solid var(--border); background: var(--surface);
+  padding-block: var(--s8); position: relative; z-index: 1;
+}
+.foot-in {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: var(--s4); flex-wrap: wrap;
+}
+.foot-logo {
+  display: flex; align-items: center; gap: var(--s2);
+  font-family: var(--font-mono); font-size: var(--sm); color: var(--teal);
+}
+.foot-copy { font-size: var(--xs); color: var(--text-faint); }
+.to-top {
+  font-family: var(--font-mono); font-size: var(--base);
+  color: var(--text-muted); padding: var(--s2);
+  transition: color var(--ease); min-width: 44px; min-height: 44px;
+  display: flex; align-items: center; justify-content: center;
+}
+.to-top:hover { color: var(--teal); }
+</style>

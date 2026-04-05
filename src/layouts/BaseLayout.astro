@@ -1,0 +1,95 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+const {
+  title = 'Epsilon²',
+  description = 'Custom web development — Landing pages, business sites, and premium builds.',
+} = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title} — Epsilon²</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Inter:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Global styles -->
+    <link rel="stylesheet" href="/styles/global.css" />
+  </head>
+  <body>
+    <!-- Language detection runs before render to avoid flash -->
+    <script>
+      const SUPPORTED = ['en', 'de', 'ar'];
+      const stored = sessionStorage.getItem('e2-lang');
+      const sys = (navigator.language || 'en').slice(0, 2).toLowerCase();
+      window.__E2_LANG__ = stored || (SUPPORTED.includes(sys) ? sys : 'en');
+      document.documentElement.lang = window.__E2_LANG__;
+      document.documentElement.dir = window.__E2_LANG__ === 'ar' ? 'rtl' : 'ltr';
+    </script>
+
+    <slot />
+
+    <!-- i18n runtime — applies translations after components mount -->
+    <script type="module">
+      import { T, LANGUAGES } from '/src/i18n/translations.js';
+
+      function applyLang(lang) {
+        sessionStorage.setItem('e2-lang', lang);
+        window.__E2_LANG__ = lang;
+        document.documentElement.lang = lang;
+        document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+
+        document.querySelectorAll('[data-t]').forEach(el => {
+          const keys = el.dataset.t.split('.');
+          let val = T[lang];
+          for (const k of keys) val = val?.[k];
+          if (val == null) return;
+          if (typeof val === 'string' && el.tagName !== 'OPTION') el.textContent = val;
+          else if (el.tagName === 'OPTION') el.textContent = val;
+        });
+
+        document.querySelectorAll('[data-t-html]').forEach(el => {
+          const keys = el.dataset.tHtml.split('.');
+          let val = T[lang];
+          for (const k of keys) val = val?.[k];
+          if (val) el.innerHTML = val;
+        });
+
+        document.querySelectorAll('[data-t-placeholder]').forEach(el => {
+          const keys = el.dataset.tPlaceholder.split('.');
+          let val = T[lang];
+          for (const k of keys) val = val?.[k];
+          if (val) el.placeholder = val;
+        });
+
+        document.querySelectorAll('[data-lang-btn]').forEach(btn => {
+          btn.classList.toggle('on', btn.dataset.langBtn === lang);
+        });
+      }
+
+      // Apply on load
+      applyLang(window.__E2_LANG__ || 'en');
+
+      // Listen for language button clicks (delegated)
+      document.addEventListener('click', e => {
+        const btn = e.target.closest('[data-lang-btn]');
+        if (btn) applyLang(btn.dataset.langBtn);
+      });
+
+      // Expose globally for components that need it
+      window.applyLang = applyLang;
+    </script>
+  </body>
+</html>

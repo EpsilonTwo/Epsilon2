@@ -1,0 +1,117 @@
+/* ================================================
+   EPSILON² — GLOBAL DESIGN SYSTEM
+   Matrix / Terminal aesthetic
+   Teal #00e5cc  |  Green #00ff41
+================================================ */
+:root {
+  --bg:           #030806;
+  --surface:      #080f0b;
+  --surface-2:    #0c1510;
+  --surface-3:    #101c15;
+  --border:       #1a2e20;
+  --border-hi:    #224430;
+
+  --text:         #c2d9c8;
+  --text-muted:   #5a8064;
+  --text-faint:   #2a4a34;
+  --text-inv:     #030806;
+
+  --teal:         #00e5cc;
+  --teal-dim:     #009e8c;
+  --teal-glow:    0 0 24px rgba(0,229,204,.3), 0 0 60px rgba(0,229,204,.1);
+  --teal-bg:      rgba(0,229,204,.07);
+
+  --green:        #00ff41;
+  --success:      #00ff88;
+
+  --font-mono:    'Space Mono', 'Courier New', monospace;
+  --font-sans:    'Inter', system-ui, sans-serif;
+
+  --xs:    clamp(.75rem,  .7rem  + .2vw,  .8125rem);
+  --sm:    clamp(.875rem, .82rem + .28vw, 1rem);
+  --base:  clamp(1rem,    .95rem + .25vw, 1.125rem);
+  --lg:    clamp(1.125rem,1rem   + .65vw, 1.5rem);
+  --xl:    clamp(1.5rem,  1.2rem + 1.2vw, 2.25rem);
+  --2xl:   clamp(2rem,    1.2rem + 2.5vw, 3.5rem);
+  --3xl:   clamp(2.5rem,  1rem   + 4.2vw, 5.5rem);
+
+  --s1:.25rem;  --s2:.5rem;   --s3:.75rem;  --s4:1rem;
+  --s5:1.25rem; --s6:1.5rem;  --s8:2rem;    --s10:2.5rem;
+  --s12:3rem;   --s16:4rem;   --s20:5rem;   --s24:6rem;
+
+  --r-sm:.25rem; --r-md:.4rem; --r-lg:.625rem; --r-xl:1rem; --r-full:9999px;
+  --ease: 180ms cubic-bezier(.16,1,.3,1);
+  --w-narrow:640px; --w-default:960px; --w-wide:1200px;
+}
+
+/* RESET */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body {
+  min-height: 100dvh;
+  font-family: var(--font-sans);
+  font-size: var(--base);
+  color: var(--text);
+  background: var(--bg);
+  overflow-x: hidden;
+}
+img, canvas, video { display: block; max-width: 100%; }
+button { cursor: pointer; background: none; border: none; font: inherit; color: inherit; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+input, textarea, select { font: inherit; color: inherit; outline: none; }
+h1,h2,h3,h4 { text-wrap: balance; line-height: 1.15; }
+p { text-wrap: pretty; max-width: 72ch; }
+
+/* SCANLINES */
+body::after {
+  content: ''; position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,0,0,.025) 3px, rgba(0,0,0,.025) 4px);
+}
+
+/* LAYOUT HELPERS */
+.wrap      { max-width: var(--w-default); margin-inline: auto; padding-inline: var(--s6); }
+.wrap--wide{ max-width: var(--w-wide);   margin-inline: auto; padding-inline: var(--s6); }
+
+/* BUTTONS */
+.btn-p {
+  padding: var(--s3) var(--s8);
+  background: var(--teal); color: var(--text-inv);
+  font-family: var(--font-mono); font-size: var(--sm); font-weight: 700; letter-spacing: .06em;
+  border-radius: var(--r-md); box-shadow: var(--teal-glow);
+  transition: all var(--ease); min-height: 44px;
+  display: inline-flex; align-items: center;
+}
+.btn-p:hover { background: var(--teal-dim); transform: translateY(-1px); box-shadow: 0 0 40px rgba(0,229,204,.45); }
+.btn-g {
+  padding: var(--s3) var(--s8);
+  border: 1px solid var(--border-hi); color: var(--text-muted);
+  font-family: var(--font-mono); font-size: var(--sm); letter-spacing: .06em;
+  border-radius: var(--r-md); transition: all var(--ease);
+  min-height: 44px; display: inline-flex; align-items: center;
+}
+.btn-g:hover { border-color: var(--teal); color: var(--teal); background: var(--teal-bg); }
+
+/* SECTION */
+.sec { padding-block: clamp(var(--s16), 8vw, var(--s24)); position: relative; z-index: 1; }
+.sec-head { text-align: center; margin-bottom: var(--s16); }
+.sec-tag {
+  display: inline-block; font-family: var(--font-mono); font-size: 10px;
+  color: var(--green); letter-spacing: .18em; text-transform: uppercase; margin-bottom: var(--s4);
+}
+.sec-title {
+  font-family: var(--font-mono); font-size: var(--2xl); font-weight: 700;
+  color: var(--teal); line-height: 1.15; text-shadow: 0 0 32px rgba(0,229,204,.18);
+  margin-bottom: var(--s4);
+}
+.sec-sub { font-size: var(--base); color: var(--text-muted); max-width: 54ch; margin-inline: auto; line-height: 1.75; }
+
+/* RTL */
+[dir=rtl] .wrap  { direction: rtl; }
+[dir=rtl] .btn-p,
+[dir=rtl] .btn-g { font-family: var(--font-sans); }

@@ -1,0 +1,67 @@
+---
+// Portfolio.astro — project grid
+---
+<section id="portfolio" class="sec">
+  <div class="wrap--wide">
+    <div class="sec-head">
+      <span class="sec-tag"  data-t="portfolio.tag">// work</span>
+      <h2  class="sec-title" data-t="portfolio.title">Selected Projects</h2>
+      <p   class="sec-sub"   data-t="portfolio.sub">Recent builds — clean, fast, purposefully designed.</p>
+    </div>
+    <div class="port-grid">
+      <article class="card card--big">
+        <div class="thumb">
+          <div class="thumb-code">
+            &lt;!-- Restaurant --&gt;<br>
+            nav &lbrace; display: flex; &rbrace;<br>
+            .hero &lbrace; background: brand; &rbrace;
+          </div>
+        </div>
+        <div class="info">
+          <span class="tag"   data-t="portfolio.p1.tag">Business Website</span>
+          <h3   class="title" data-t="portfolio.p1.title">Restaurant &amp; Bistro — Stuttgart</h3>
+          <p    class="stack" data-t="portfolio.p1.stack">Astro · CSS · JS · Netlify</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="thumb" style="background:linear-gradient(135deg,#040c08,#071510)">
+          <div class="thumb-code" style="font-size:10px">
+            &lbrace; role: &quot;Designer&quot;,<br>&nbsp;portfolio: true &rbrace;
+          </div>
+        </div>
+        <div class="info">
+          <span class="tag"   data-t="portfolio.p2.tag">Portfolio</span>
+          <h3   class="title" data-t="portfolio.p2.title">Freelance Designer Portfolio</h3>
+          <p    class="stack" data-t="portfolio.p2.stack">HTML · CSS · JS</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="thumb" style="background:linear-gradient(135deg,#030a06,#060e09)">
+          <div class="thumb-code" style="font-size:10px">
+            &lt;LandingPage<br>&nbsp;cta=&quot;buy now&quot; /&gt;
+          </div>
+        </div>
+        <div class="info">
+          <span class="tag"   data-t="portfolio.p3.tag">Landing Page</span>
+          <h3   class="title" data-t="portfolio.p3.title">Product Launch Page</h3>
+          <p    class="stack" data-t="portfolio.p3.stack">HTML · CSS · JS</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+<style>
+#portfolio { background: var(--bg); }
+.port-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s4); }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); overflow: hidden; transition: border-color var(--ease), transform var(--ease), box-shadow var(--ease); }
+.card:hover { border-color: var(--teal); transform: translateY(-2px); box-shadow: var(--teal-glow); }
+.card--big { grid-column: span 2; }
+.thumb { aspect-ratio: 16/9; background: linear-gradient(135deg, #060e0a, #0a1c12); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.card--big .thumb { aspect-ratio: 2.4/1; }
+.thumb-code { font-family: var(--font-mono); font-size: 11px; color: var(--teal); opacity: .45; line-height: 1.9; padding: var(--s4); }
+.info { padding: var(--s5); }
+.tag   { font-family: var(--font-mono); font-size: 9px; color: var(--green); letter-spacing: .14em; text-transform: uppercase; display: block; margin-bottom: var(--s2); }
+.title { font-size: var(--sm); font-weight: 600; color: var(--text); margin-bottom: var(--s1); }
+.stack { font-family: var(--font-mono); font-size: 10px; color: var(--text-faint); }
+@media(max-width:768px) { .port-grid { grid-template-columns: 1fr; } .card--big { grid-column: span 1; } }
+</style>

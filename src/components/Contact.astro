@@ -1,0 +1,117 @@
+---
+// Contact.astro — contact form with budget selector
+---
+<section id="contact" class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-tag"  data-t="contact.tag">// contact</span>
+      <h2  class="sec-title" data-t="contact.title">Let&#x27;s Build Together</h2>
+      <p   class="sec-sub"   data-t="contact.sub">Have a project in mind? We reply within 24 hours.</p>
+    </div>
+
+    <div class="c-grid">
+      <div class="c-left">
+        <h3 data-t="contact.h">Ready to launch?</h3>
+        <p  data-t="contact.p">Tell us what you need. We handle everything — design to deployment.</p>
+        <div class="c-links">
+          <a href="mailto:hello@epsilon2.dev" class="c-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            hello@epsilon2.dev
+          </a>
+          <a href="https://github.com/epsilon2dev" target="_blank" rel="noopener noreferrer" class="c-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            github.com/epsilon2dev
+          </a>
+        </div>
+      </div>
+
+      <form class="c-form" id="contact-form" novalidate>
+        <div class="row-2">
+          <div class="field">
+            <label for="cf-name" data-t="contact.name">Name</label>
+            <input id="cf-name" type="text" name="name" required data-t-placeholder="contact.name" placeholder="Name" />
+          </div>
+          <div class="field">
+            <label for="cf-email" data-t="contact.email">Email</label>
+            <input id="cf-email" type="email" name="email" required data-t-placeholder="contact.email" placeholder="Email" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="cf-budget" data-t="contact.budget">Budget</label>
+          <select id="cf-budget" name="budget">
+            <option value="landing"  data-t="contact.b1">$50–$150 (Landing Page)</option>
+            <option value="business" data-t="contact.b2">$200–$500 (Business Site)</option>
+            <option value="premium"  data-t="contact.b3">$500+ (Custom Premium)</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="cf-msg" data-t="contact.msg">Message</label>
+          <textarea id="cf-msg" name="message" rows="5" required data-t-placeholder="contact.msg" placeholder="Message"></textarea>
+        </div>
+
+        <button type="submit" class="btn-p" data-t="contact.send">Send Message →</button>
+        <p class="success" id="c-success" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<style>
+#contact { background: var(--bg); }
+.c-grid {
+  display: grid; grid-template-columns: 1fr 1.6fr; gap: var(--s12); align-items: start;
+}
+.c-left h3 { font-family: var(--font-mono); font-size: var(--lg); color: var(--teal); margin-bottom: var(--s4); }
+.c-left p  { font-size: var(--base); color: var(--text-muted); line-height: 1.8; margin-bottom: var(--s8); }
+.c-links { display: flex; flex-direction: column; gap: var(--s4); }
+.c-link {
+  display: flex; align-items: center; gap: var(--s3);
+  font-family: var(--font-mono); font-size: var(--xs); color: var(--text-muted);
+  transition: color var(--ease);
+}
+.c-link:hover { color: var(--teal); }
+
+.c-form { display: flex; flex-direction: column; gap: var(--s5); }
+.row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s4); }
+.field { display: flex; flex-direction: column; gap: var(--s2); }
+label {
+  font-family: var(--font-mono); font-size: var(--xs);
+  color: var(--text-muted); letter-spacing: .08em;
+}
+input, textarea, select {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-md); padding: var(--s3) var(--s4);
+  color: var(--text); font-size: var(--sm); min-height: 44px;
+  transition: border-color var(--ease), box-shadow var(--ease);
+}
+input:focus, textarea:focus, select:focus {
+  border-color: var(--teal); box-shadow: 0 0 0 3px rgba(0,229,204,.12);
+}
+select option { background: var(--surface-2); }
+textarea { resize: vertical; min-height: 120px; }
+.success {
+  font-family: var(--font-mono); font-size: var(--xs); color: var(--green);
+  min-height: 1.5em; transition: opacity var(--ease);
+}
+
+@media(max-width:768px) {
+  .c-grid { grid-template-columns: 1fr; }
+  .row-2  { grid-template-columns: 1fr; }
+}
+[dir=rtl] .c-form { text-align: right; }
+[dir=rtl] .row-2  { direction: rtl; }
+</style>
+
+<script>
+document.getElementById('contact-form').addEventListener('submit', e => {
+  e.preventDefault();
+  const succ = document.getElementById('c-success');
+  const lang = window.__E2_LANG__ || 'en';
+  const msgs = { en:'Message sent! We will reply within 24h.', de:'Nachricht gesendet! Wir melden uns in 24h.', ar:'تم الإرسال! سنرد خلال 24 ساعة.' };
+  succ.textContent = msgs[lang] || msgs['en'];
+  e.target.reset();
+  setTimeout(() => { succ.textContent = ''; }, 5000);
+});
+</script>

@@ -1,0 +1,53 @@
+---
+// Process.astro — 4-step how-we-work section
+---
+<section id="process" class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-tag"  data-t="process.tag">// process</span>
+      <h2  class="sec-title" data-t="process.title">How We Work</h2>
+      <p   class="sec-sub"   data-t="process.sub">Simple, transparent, efficient. No surprises.</p>
+    </div>
+    <div class="proc-grid">
+      <div class="step">
+        <h3 data-t="process.s1.h">Discovery</h3>
+        <p  data-t="process.s1.p">Tell us your goals and audience. We ask the right questions.</p>
+      </div>
+      <div class="step">
+        <h3 data-t="process.s2.h">Design</h3>
+        <p  data-t="process.s2.p">We create a visual concept tailored to your brand.</p>
+      </div>
+      <div class="step">
+        <h3 data-t="process.s3.h">Development</h3>
+        <p  data-t="process.s3.p">Clean, fast code. Follow progress live on GitHub.</p>
+      </div>
+      <div class="step">
+        <h3 data-t="process.s4.h">Launch</h3>
+        <p  data-t="process.s4.p">Deploy to CDN, domain setup, full handover. Done.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+#process { background: var(--surface); }
+.proc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(220px,100%), 1fr));
+  gap: var(--s6); counter-reset: proc;
+}
+.step {
+  padding: var(--s6); background: var(--surface-2);
+  border: 1px solid var(--border); border-radius: var(--r-lg);
+  counter-increment: proc; position: relative;
+  transition: border-color var(--ease);
+}
+.step:hover { border-color: var(--teal); }
+.step::before {
+  content: counter(proc, decimal-leading-zero);
+  font-family: var(--font-mono); font-size: var(--2xl); font-weight: 700;
+  color: var(--text-faint); display: block; margin-bottom: var(--s3); line-height: 1;
+}
+.step h3 { font-family: var(--font-mono); font-size: var(--sm); color: var(--teal); margin-bottom: var(--s2); }
+.step p  { font-size: var(--xs); color: var(--text-muted); line-height: 1.75; max-width: 32ch; }
+</style>
