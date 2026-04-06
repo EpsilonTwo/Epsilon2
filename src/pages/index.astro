@@ -2,23 +2,408 @@
 import BaseLayout  from '../layouts/BaseLayout.astro';
 import Nav         from '../components/Nav.astro';
 import Hero        from '../components/Hero.astro';
-import Services    from '../components/Services.astro';
-import Process     from '../components/Process.astro';
-import Portfolio   from '../components/Portfolio.astro';
-import About       from '../components/About.astro';
 import Contact     from '../components/Contact.astro';
 import Footer      from '../components/Footer.astro';
 ---
 
-<BaseLayout title="Epsilon²" description="Custom web development — Landing pages, business sites, and premium builds.">
+<BaseLayout title="Epsilon² Redesign" description="Web development, branding, and digital design by Epsilon².">
   <Nav />
   <main style="padding-top: 64px;">
     <Hero />
-    <Services />
-    <Process />
-    <Portfolio />
-    <About />
+
+    <section class="sec showcase" id="showcase">
+      <div class="wrap--wide showcase-grid">
+        <div class="agency-copy">
+          <span class="sec-tag">// agency</span>
+          <h2 class="sec-title">We design brands, not just pages.</h2>
+          <p class="sec-sub left">Epsilon² blends web development, interface design, motion, and visual identity into one build process. We create websites, logos, brand systems, UI concepts, and launch-ready experiences that feel intentional from the first second.</p>
+          <div class="pill-row">
+            <span class="pill">Web Design</span>
+            <span class="pill">Logo Design</span>
+            <span class="pill">Brand Systems</span>
+            <span class="pill">Frontend Build</span>
+            <span class="pill">Backend Logic</span>
+          </div>
+        </div>
+
+        <div class="collage-wrap">
+          <div class="collage-card collage-a">
+            <div class="browser-bar"><span></span><span></span><span></span></div>
+            <div class="screen hero-screen">
+              <div class="logo-mark">ε²</div>
+              <div class="glow-line"></div>
+              <div class="grid-mini"></div>
+            </div>
+          </div>
+          <div class="collage-card collage-b">
+            <div class="screen logo-screen">
+              <div class="logo-grid">
+                <div class="logo-box">E²</div>
+                <div class="logo-box alt">EP</div>
+                <div class="logo-box thin">∑2</div>
+                <div class="logo-box ring">◌</div>
+              </div>
+            </div>
+          </div>
+          <div class="collage-card collage-c">
+            <div class="screen ui-screen">
+              <div class="ui-line long"></div>
+              <div class="ui-line med"></div>
+              <div class="ui-line short"></div>
+              <div class="ui-panels">
+                <div></div><div></div><div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec skills-sec" id="skills">
+      <div class="wrap--wide">
+        <div class="sec-head">
+          <span class="sec-tag">// skills</span>
+          <h2 class="sec-title">Full-stack and full-brand.</h2>
+          <p class="sec-sub">We can build the system, design the interface, shape the brand, and deliver the finished experience.</p>
+        </div>
+
+        <div class="skills-grid">
+          <article class="skill-card frontend">
+            <div class="skill-head">
+              <span class="skill-kicker">Frontend</span>
+              <h3>Interfaces that feel sharp.</h3>
+            </div>
+            <div class="tag-cloud">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Java</span><span>React</span><span>Astro</span>
+            </div>
+            <p>Landing pages, dashboards, portfolios, responsive websites, animations, and polished UI systems.</p>
+          </article>
+
+          <article class="skill-card backend">
+            <div class="skill-head">
+              <span class="skill-kicker">Backend</span>
+              <h3>Logic that keeps it alive.</h3>
+            </div>
+            <div class="tag-cloud">
+              <span>PHP</span><span>Java</span><span>C#</span><span>SQL</span><span>Python</span>
+            </div>
+            <p>Structured data, APIs, database logic, server-side workflows, admin tooling, and custom features.</p>
+          </article>
+
+          <article class="skill-card design">
+            <div class="skill-head">
+              <span class="skill-kicker">Design</span>
+              <h3>Branding beyond the browser.</h3>
+            </div>
+            <div class="tag-cloud">
+              <span>Photoshop</span><span>Canva</span><span>Premiere</span><span>Animate</span><span>InDesign</span><span>Figma</span>
+            </div>
+            <p>Logo concepts, social visuals, editing, motion assets, presentations, and complete visual direction.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec process-plus" id="approach">
+      <div class="wrap--wide process-plus-grid">
+        <div>
+          <span class="sec-tag">// workflow</span>
+          <h2 class="sec-title">From idea to identity to launch.</h2>
+          <p class="sec-sub left">Instead of splitting design and development into disconnected steps, we treat them as one system. That means cleaner branding, faster builds, and better consistency across website, logo, and content.</p>
+        </div>
+        <div class="timeline-box">
+          <div class="timeline-item"><span>01</span><div><h3>Strategy</h3><p>Goals, audience, positioning, page structure.</p></div></div>
+          <div class="timeline-item"><span>02</span><div><h3>Design</h3><p>UI direction, logo concepts, style system, visual language.</p></div></div>
+          <div class="timeline-item"><span>03</span><div><h3>Build</h3><p>Frontend, backend, CMS logic, performance tuning, responsive QA.</p></div></div>
+          <div class="timeline-item"><span>04</span><div><h3>Launch</h3><p>Deploy, domain setup, handoff, future growth support.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec work-redesign" id="portfolio">
+      <div class="wrap--wide">
+        <div class="sec-head">
+          <span class="sec-tag">// capabilities</span>
+          <h2 class="sec-title">What your project can include.</h2>
+          <p class="sec-sub">Instead of bland placeholder projects, this section shows the real kinds of deliverables Epsilon² can produce.</p>
+        </div>
+
+        <div class="work-grid-new">
+          <article class="work-panel feature-large">
+            <div class="work-visual site-preview">
+              <div class="preview-top"></div>
+              <div class="preview-body">
+                <div class="preview-side"></div>
+                <div class="preview-main">
+                  <div class="bar a"></div>
+                  <div class="bar b"></div>
+                  <div class="chart-row"><span></span><span></span><span></span></div>
+                </div>
+              </div>
+            </div>
+            <div class="work-copy">
+              <span class="label">Custom Website Systems</span>
+              <h3>Modern websites with clear structure and custom interaction.</h3>
+              <p>Business websites, landing pages, agency pages, portfolios, dashboards, multilingual builds, and custom layouts tailored to a real brand.</p>
+            </div>
+          </article>
+
+          <article class="work-panel">
+            <div class="work-visual brand-preview">
+              <div class="brand-orb"></div>
+              <div class="brand-mark">ε²</div>
+            </div>
+            <div class="work-copy">
+              <span class="label">Logo & Branding</span>
+              <h3>Identity systems with memorable marks.</h3>
+              <p>Logo concepts, icon sets, typography direction, social templates, color systems, and launch visuals.</p>
+            </div>
+          </article>
+
+          <article class="work-panel">
+            <div class="work-visual media-preview">
+              <div class="media-strip"></div>
+              <div class="media-card one"></div>
+              <div class="media-card two"></div>
+            </div>
+            <div class="work-copy">
+              <span class="label">Content Design</span>
+              <h3>Motion, editing, and campaign assets.</h3>
+              <p>Presentation visuals, edited promo assets, short motion pieces, product graphics, and supporting media for launches.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <Contact />
   </main>
   <Footer />
 </BaseLayout>
+
+<style>
+.left { margin-inline: 0; text-align: left; }
+.showcase { background: linear-gradient(180deg, var(--bg) 0%, #05110c 100%); }
+.showcase-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: var(--s12);
+  align-items: center;
+}
+.agency-copy { display:flex; flex-direction:column; gap: var(--s5); }
+.pill-row { display:flex; flex-wrap:wrap; gap: var(--s3); margin-top: var(--s3); }
+.pill {
+  border: 1px solid var(--border-hi);
+  background: rgba(0,229,204,.06);
+  color: var(--teal);
+  border-radius: var(--r-full);
+  padding: .45rem .85rem;
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+.collage-wrap {
+  position: relative;
+  min-height: 520px;
+}
+.collage-card {
+  position: absolute;
+  border: 1px solid var(--border-hi);
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgba(7,19,14,.98), rgba(4,11,8,.96));
+  box-shadow: 0 20px 60px rgba(0,0,0,.35), 0 0 40px rgba(0,229,204,.08);
+  overflow: hidden;
+}
+.collage-a { width: 68%; height: 62%; top: 0; left: 0; transform: rotate(-4deg); }
+.collage-b { width: 50%; height: 42%; right: 0; top: 8%; transform: rotate(6deg); }
+.collage-c { width: 58%; height: 42%; right: 10%; bottom: 4%; transform: rotate(-3deg); }
+.browser-bar { display:flex; gap:8px; padding: 12px 14px; border-bottom:1px solid var(--border); }
+.browser-bar span { width:10px; height:10px; border-radius:999px; background:#234838; }
+.screen { height: calc(100% - 40px); position: relative; padding: 1rem; }
+.hero-screen {
+  background: radial-gradient(circle at center, rgba(0,229,204,.14), transparent 50%), linear-gradient(135deg, #071510, #020705);
+}
+.logo-mark {
+  position:absolute; inset:0; display:grid; place-items:center;
+  font-family: var(--font-mono); font-size: 4rem; color: var(--teal); text-shadow: var(--teal-glow);
+}
+.glow-line { position:absolute; left:10%; right:10%; bottom:18%; height:1px; background:linear-gradient(90deg, transparent, var(--teal), transparent); }
+.grid-mini {
+  position:absolute; inset:18px;
+  background-image: linear-gradient(rgba(0,229,204,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(0,229,204,.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(circle at center, black 45%, transparent 80%);
+}
+.logo-screen { height:100%; display:grid; place-items:center; }
+.logo-grid { display:grid; grid-template-columns:1fr 1fr; gap: .8rem; width:100%; height:100%; }
+.logo-box {
+  display:grid; place-items:center; border:1px solid var(--border-hi); border-radius:18px;
+  color: var(--teal); font-family: var(--font-mono); font-size:1.5rem; background: rgba(0,229,204,.05);
+}
+.logo-box.alt { color: var(--green); }
+.logo-box.thin { font-weight:300; letter-spacing:.18em; }
+.logo-box.ring { color: #83ffe5; }
+.ui-screen { display:flex; flex-direction:column; gap: .8rem; height:100%; justify-content:center; }
+.ui-line { height: 14px; border-radius:999px; background: linear-gradient(90deg, rgba(0,229,204,.5), transparent); }
+.ui-line.long { width: 80%; }
+.ui-line.med { width: 62%; }
+.ui-line.short { width: 38%; }
+.ui-panels { display:grid; grid-template-columns: repeat(3,1fr); gap:.8rem; margin-top:.4rem; }
+.ui-panels div { height:100px; border-radius:16px; background: linear-gradient(180deg, rgba(0,229,204,.09), rgba(255,255,255,.02)); border:1px solid var(--border); }
+
+.skills-sec { background: var(--surface); }
+.skills-grid {
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s6);
+}
+.skill-card {
+  background: linear-gradient(180deg, var(--surface-2), rgba(5,14,10,.95));
+  border:1px solid var(--border);
+  border-radius: 22px;
+  padding: var(--s8);
+  position:relative;
+  overflow:hidden;
+  min-height: 340px;
+}
+.skill-card::before {
+  content:''; position:absolute; inset:0;
+  background: radial-gradient(circle at top right, rgba(0,229,204,.12), transparent 35%);
+  pointer-events:none;
+}
+.skill-head { margin-bottom: var(--s6); }
+.skill-kicker {
+  display:inline-block; margin-bottom: var(--s3);
+  font-family: var(--font-mono); font-size: 11px; letter-spacing:.16em; text-transform:uppercase; color: var(--green);
+}
+.skill-card h3 {
+  font-family: var(--font-mono);
+  font-size: 1.45rem;
+  color: var(--teal);
+  margin-bottom: var(--s2);
+}
+.skill-card p { color: var(--text-muted); line-height: 1.75; font-size: var(--sm); }
+.tag-cloud { display:flex; flex-wrap:wrap; gap: .55rem; margin-bottom: var(--s6); }
+.tag-cloud span {
+  padding: .5rem .75rem;
+  border-radius: 999px;
+  border:1px solid var(--border-hi);
+  background: rgba(0,229,204,.05);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text);
+}
+.frontend { box-shadow: inset 0 0 0 1px rgba(0,229,204,.04); }
+.backend { box-shadow: inset 0 0 0 1px rgba(0,255,65,.05); }
+.design { box-shadow: inset 0 0 0 1px rgba(131,255,229,.06); }
+
+.process-plus { background: var(--bg); }
+.process-plus-grid {
+  display:grid;
+  grid-template-columns: .95fr 1.05fr;
+  gap: var(--s10);
+  align-items:start;
+}
+.timeline-box {
+  border:1px solid var(--border);
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgba(8,15,11,.96), rgba(3,8,6,.96));
+  padding: var(--s8);
+}
+.timeline-item {
+  display:grid;
+  grid-template-columns: 54px 1fr;
+  gap: var(--s4);
+  padding-block: var(--s4);
+  border-bottom:1px solid rgba(255,255,255,.05);
+}
+.timeline-item:last-child { border-bottom:0; }
+.timeline-item span {
+  width:54px; height:54px; display:grid; place-items:center;
+  border-radius:50%; border:1px solid var(--border-hi);
+  color: var(--teal); font-family: var(--font-mono);
+}
+.timeline-item h3 { font-family: var(--font-mono); color: var(--text); margin-bottom: .35rem; }
+.timeline-item p { color: var(--text-muted); font-size: var(--sm); }
+
+.work-redesign { background: linear-gradient(180deg, #05110c 0%, var(--surface) 100%); }
+.work-grid-new {
+  display:grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: var(--s5);
+}
+.work-panel {
+  background: linear-gradient(180deg, rgba(10,20,15,.96), rgba(5,11,8,.98));
+  border:1px solid var(--border);
+  border-radius: 24px;
+  overflow:hidden;
+  min-height: 430px;
+  display:flex;
+  flex-direction:column;
+}
+.feature-large { min-height: 470px; }
+.work-visual {
+  min-height: 230px;
+  border-bottom:1px solid rgba(255,255,255,.05);
+  position:relative;
+  overflow:hidden;
+}
+.site-preview {
+  background: radial-gradient(circle at 30% 30%, rgba(0,229,204,.16), transparent 35%), linear-gradient(135deg, #08150f, #020705);
+  padding: 1rem;
+}
+.preview-top { height: 18px; width: 100%; border-radius: 999px; background: rgba(255,255,255,.08); margin-bottom: .85rem; }
+.preview-body { display:grid; grid-template-columns: 90px 1fr; gap: .85rem; height: 170px; }
+.preview-side, .preview-main { border-radius: 16px; background: rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.06); }
+.preview-main { padding: 1rem; }
+.bar { height: 12px; border-radius: 999px; background: linear-gradient(90deg, rgba(0,229,204,.6), transparent); margin-bottom: .75rem; }
+.bar.a { width: 72%; }
+.bar.b { width: 48%; }
+.chart-row { display:flex; align-items:flex-end; gap: .75rem; height: 90px; padding-top: 1rem; }
+.chart-row span { flex:1; border-radius: 12px 12px 6px 6px; background: linear-gradient(180deg, var(--teal), rgba(0,229,204,.12)); }
+.chart-row span:nth-child(1){ height: 45%; }
+.chart-row span:nth-child(2){ height: 80%; }
+.chart-row span:nth-child(3){ height: 65%; }
+.brand-preview {
+  display:grid; place-items:center;
+  background: radial-gradient(circle at center, rgba(0,229,204,.16), transparent 45%), linear-gradient(135deg, #07130e, #030806);
+}
+.brand-orb {
+  position:absolute; width: 180px; height:180px; border-radius:50%;
+  border:1px solid rgba(0,229,204,.25); box-shadow: 0 0 60px rgba(0,229,204,.1) inset;
+}
+.brand-mark {
+  position:relative; font-family: var(--font-mono); font-size: 4rem; color: var(--teal); text-shadow: var(--teal-glow);
+}
+.media-preview {
+  background: linear-gradient(180deg, #09140f, #040806);
+  padding: 1rem;
+}
+.media-strip { height: 18px; width: 45%; border-radius:999px; background: rgba(255,255,255,.08); margin-bottom: 1rem; }
+.media-card {
+  position:absolute; border-radius: 18px; border:1px solid var(--border-hi);
+  background: linear-gradient(180deg, rgba(0,229,204,.1), rgba(255,255,255,.03));
+}
+.media-card.one { width: 62%; height: 56%; left: 12%; top: 24%; transform: rotate(-8deg); }
+.media-card.two { width: 52%; height: 50%; right: 10%; bottom: 10%; transform: rotate(8deg); }
+.work-copy { padding: var(--s6); display:flex; flex-direction:column; gap: var(--s3); }
+.label {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing:.16em; text-transform:uppercase; color: var(--green);
+}
+.work-copy h3 { font-family: var(--font-mono); color: var(--teal); font-size: 1.2rem; }
+.work-copy p { color: var(--text-muted); line-height:1.75; font-size: var(--sm); }
+
+@media (max-width: 1024px) {
+  .showcase-grid, .process-plus-grid, .skills-grid, .work-grid-new { grid-template-columns: 1fr; }
+  .collage-wrap { min-height: 440px; }
+}
+@media (max-width: 768px) {
+  .left { text-align: left; }
+  .collage-wrap { min-height: 360px; }
+  .collage-a { width: 76%; height: 52%; }
+  .collage-b { width: 54%; height: 34%; }
+  .collage-c { width: 64%; height: 34%; }
+}
+[dir=rtl] .left { text-align: right; }
+[dir=rtl] .timeline-item { grid-template-columns: 1fr 54px; }
+[dir=rtl] .showcase-grid, [dir=rtl] .process-plus-grid { direction: rtl; }
+</style>
